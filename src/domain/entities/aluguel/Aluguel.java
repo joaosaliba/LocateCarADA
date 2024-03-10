@@ -8,6 +8,7 @@ import domain.entities.pessoa.PessoaJuridica;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Aluguel implements Entidade {
     private static Long contadorIds = 1L;
@@ -23,12 +24,17 @@ public class Aluguel implements Entidade {
 
     }
 
-    public Aluguel(Pessoa pessoa, Carro carro, LocalDateTime dthRetirada, LocalDateTime dthDevolucao, Double desconto) {
+    public Aluguel(Pessoa pessoa, Carro carro, LocalDateTime dthRetirada, LocalDateTime dthDevolucao) {
         this.pessoa = pessoa;
         this.carro = carro;
         this.dthRetirada = dthRetirada;
         this.dthDevolucao = dthDevolucao;
-        this.desconto = desconto;
+        this.id = getIdAndIncrement();
+
+    }   public Aluguel(Pessoa pessoa, Carro carro, LocalDateTime dthRetirada) {
+        this.pessoa = pessoa;
+        this.carro = carro;
+        this.dthRetirada = dthRetirada;
         this.id = getIdAndIncrement();
 
     }
@@ -39,7 +45,6 @@ public class Aluguel implements Entidade {
         this.carro = carro;
         this.dthRetirada = dthRetirada;
         this.dthDevolucao = dthDevolucao;
-        this.desconto = desconto;
         this.id = id;
 
     }
@@ -118,23 +123,24 @@ public class Aluguel implements Entidade {
 
     @Override
     public String toCsvString() {
-        return id + "," +
-                pessoa.getId() + "," +
-                carro.getId() + "," +
+        return   pessoa.toCsvString() + ";" +
+                carro.toCsvString() + ";" +
+                 id + "," +
                 dthRetirada.toString() + "," +
-                dthDevolucao.toString() + "," +
+               ( Objects.nonNull(dthDevolucao) ? dthDevolucao.toString() :null) + "," +
                 desconto;
     }
 
     @Override
     public Aluguel fromCsvString(String csv) {
-        String[] parts = csv.split(",");
+        String[] parts = csv.split(";");
+        Pessoa pessoa = new Pessoa().fromCsvString(parts[0]);
+        Carro carro = new Carro().fromCsvString(parts[1]);
+        parts = parts[2].split(",");
         String id = parts[0];
-        Pessoa pessoa = new Pessoa();
-        Carro carro = new Carro();
-        LocalDateTime dthRetirada = LocalDateTime.parse(parts[3]);
-        LocalDateTime dthDevolucao = LocalDateTime.parse(parts[4]);
-        Double desconto = Double.parseDouble(parts[5]);
+        LocalDateTime dthRetirada = !"null".equals(parts[1])?LocalDateTime.parse(parts[1]):null;
+        LocalDateTime dthDevolucao = !"null".equals(parts[2])?LocalDateTime.parse(parts[2]):null;
+        Double desconto = !"null".equals(parts[3])?Double.parseDouble(parts[3]):null;
 
         return new Aluguel(id, pessoa, carro, dthRetirada, dthDevolucao, desconto);
     }

@@ -4,6 +4,8 @@ import domain.entities.Entidade;
 import domain.factory.EntidadeFactory;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 public class EntityFileStorage<T extends Entidade> {
@@ -33,14 +35,25 @@ public class EntityFileStorage<T extends Entidade> {
 
      public List<T> carregarDoArquivo() throws EntityFileStorageException {
           List<T> lista = new ArrayList<>();
-          try (BufferedReader reader = new BufferedReader(new FileReader(nomeArquivo))) {
-               String linha;
-               while ((linha = reader.readLine()) != null) {
-                    lista.add((T) factory.criarEntidade().fromCsvString(linha));
+
+          try {
+               if (!Files.exists(Paths.get(nomeArquivo))) {
+                    // Cria o arquivo se não existir
+                    Files.createFile(Paths.get(nomeArquivo));
                }
-          } catch (IOException e) {
-               throw new EntityFileStorageException("Erro ao ler aquivio, ou arquivo não encontrado "+ this.nomeArquivo,e);
+
+               try (BufferedReader reader = new BufferedReader(new FileReader(nomeArquivo))) {
+                    String linha;
+                    while ((linha = reader.readLine()) != null) {
+                         lista.add((T) factory.criarEntidade().fromCsvString(linha));
+                    }
+               } catch (IOException e) {
+                    throw new EntityFileStorageException("Erro ao ler arquivo " + this.nomeArquivo, e);
+               }
+          } catch (IOException ex) {
+               throw new EntityFileStorageException("Erro ao verificar ou criar arquivo " + this.nomeArquivo, ex);
           }
+
           return lista;
      }
 }

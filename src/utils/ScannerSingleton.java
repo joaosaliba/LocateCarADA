@@ -1,4 +1,4 @@
-package catalago.utils;
+package utils;
 
 import java.util.Scanner;
 
