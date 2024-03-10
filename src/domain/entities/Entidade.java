@@ -1,7 +1,7 @@
 package domain.entities;
 
-public interface Entidade<T>  {
+public interface Entidade  {
     String getId();
     String toCsvString();
-    T fromCsvString(String csv);
+    Entidade fromCsvString(String csv);
 }

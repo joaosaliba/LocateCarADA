@@ -5,7 +5,7 @@ import domain.entities.pessoa.PessoaJuridica;
 import domain.entities.pessoa.Pessoa;
 import domain.enums.TipoPessoaEnum;
 
-public class PessoaFactory {
+public class PessoaFactory implements EntidadeFactory<Pessoa> {
 
     public static Pessoa getInstance(TipoPessoaEnum tipoPessoaEnum) {
         return switch (tipoPessoaEnum) {
@@ -14,5 +14,10 @@ public class PessoaFactory {
             default -> throw new IllegalArgumentException("Tipo Pessoa não encontrada");
         };
 
+    }
+
+    @Override
+    public Pessoa criarEntidade() {
+        return new Pessoa();
     }
 }
