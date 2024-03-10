@@ -7,7 +7,10 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
 public class EntityFileStorage<T extends Entidade> {
 
 
@@ -21,7 +24,7 @@ public class EntityFileStorage<T extends Entidade> {
 
 
 
-     public void salvarEmArquivo(List<T> lista) throws EntityFileStorageException {
+     public void salvarEmArquivo(Set<T> lista) throws EntityFileStorageException {
           try (BufferedWriter writer = new BufferedWriter(new FileWriter(nomeArquivo))) {
                for (T entidade : lista) {
                     writer.write(entidade.toCsvString());
@@ -33,8 +36,8 @@ public class EntityFileStorage<T extends Entidade> {
           }
      }
 
-     public List<T> carregarDoArquivo() throws EntityFileStorageException {
-          List<T> lista = new ArrayList<>();
+     public Set<T> carregarDoArquivo() throws EntityFileStorageException {
+          Set<T> lista = new HashSet<>();
 
           try {
                if (!Files.exists(Paths.get(nomeArquivo))) {

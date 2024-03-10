@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56630c4f-1b7a-4fba-9234-ff4ad6656792" name="Changes" comment="feat: creating generic Repository">
+    <list default="true" id="56630c4f-1b7a-4fba-9234-ff4ad6656792" name="Changes" comment="fix: fixing read file if not exist e populate Object Aluguel">
+      <change afterPath="$PROJECT_DIR$/src/Initializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/AluguelService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/CarroService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/PessoaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pessoa.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/entities/aluguel/Aluguel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/entities/aluguel/Aluguel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/ScannerSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ScannerSingleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/file/EntityFileStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/file/EntityFileStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/repository/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/repository/RepositoryImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/repository/RepositoryImp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +102,7 @@
       <updated>1709863324408</updated>
       <workItem from="1709863325740" duration="42000" />
       <workItem from="1709863373613" duration="2880000" />
-      <workItem from="1710085528398" duration="12194000" />
+      <workItem from="1710085528398" duration="14319000" />
     </task>
     <task id="LOCAL-00001" summary="feat: create database">
       <option name="closed" value="true" />
@@ -124,7 +128,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710096044227</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix: fixing read file if not exist e populate Object Aluguel">
+      <option name="closed" value="true" />
+      <created>1710098076919</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1710098076919</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,7 +146,8 @@
     <MESSAGE value="feat: create database" />
     <MESSAGE value="feat: using strategy to create e use file databse" />
     <MESSAGE value="feat: creating generic Repository" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: creating generic Repository" />
+    <MESSAGE value="fix: fixing read file if not exist e populate Object Aluguel" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: fixing read file if not exist e populate Object Aluguel" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -153,9 +166,14 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
           <line>31</line>
-          <option name="timeStamp" value="8" />
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="domain.entities.aluguel.Aluguel" memberName="carro" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

@@ -4,12 +4,13 @@ import domain.entities.Entidade;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Set;
 
 public class RepositoryImp<T extends Entidade,K> implements Repository<T,K> {
 
-    protected List<T> list;
+    protected Set<T> list;
 
-    public RepositoryImp(List<T> list) {
+    public RepositoryImp(Set<T> list) {
         this.list = list;
     }
 
@@ -29,7 +30,7 @@ public class RepositoryImp<T extends Entidade,K> implements Repository<T,K> {
     }
 
     @Override
-    public List<T> getAll() throws SQLException {
+    public Set<T> getAll() throws SQLException {
         return list;
     }
 }
