@@ -1,11 +1,13 @@
-package domain.abstracts;
+package domain.entities.pessoa;
 
 
+import domain.entities.Entidade;
 import domain.enums.TipoPessoaEnum;
 import domain.factory.PessoaFactory;
 
-public abstract class Pessoa {
-    private Integer id;
+public  class Pessoa implements Entidade {
+    private String cpfCnpj;
+
     private String nome;
 
     private TipoPessoaEnum tipoPessoaEnum;
@@ -13,16 +15,25 @@ public abstract class Pessoa {
     public Pessoa() {
     }
 
-    public Pessoa(Integer id, String nome, TipoPessoaEnum tipoPessoaEnum) {
-        this.id = id;
+    public Pessoa(String cpfCnpj, String nome, TipoPessoaEnum tipoPessoaEnum) {
+        this.cpfCnpj = cpfCnpj;
         this.nome = nome;
         this.tipoPessoaEnum = tipoPessoaEnum;
     }
 
-    public Integer getId() {
-        return id;
+
+    @Override
+    public String getId() {
+        return cpfCnpj;
     }
 
+    public String getCpfCnpj() {
+        return this.getId();
+    }
+
+    public void setCpfCnpj(String cpfCnpj) {
+        this.cpfCnpj = cpfCnpj;
+    }
 
     public String getNome() {
         return nome;
@@ -42,13 +53,30 @@ public abstract class Pessoa {
     }
 
 
+    @Override
+    public String toCsvString() {
+        return cpfCnpj + "," + nome + "," + tipoPessoaEnum.name();
+    }
+
+    @Override
+    public Pessoa fromCsvString(String csv) {
+        String[] parts = csv.split(",");
+        Pessoa pessoa = PessoaFactory.getInstance(TipoPessoaEnum.valueOf(parts[2]));
+        pessoa.setCpfCnpj(parts[0]);
+        pessoa.setNome(parts[1]);
+        return pessoa;
+    }
+
+
     public static class PessoaBuilder {
+        private String cpfCnpj;
         private String nome;
         private TipoPessoaEnum tipoPessoaEnum;
 
         public Pessoa build() {
             Pessoa pessoa = PessoaFactory.getInstance(tipoPessoaEnum);
 
+            pessoa.setCpfCnpj(cpfCnpj);
             pessoa.setNome(nome);
 
             return pessoa;
@@ -56,6 +84,11 @@ public abstract class Pessoa {
 
         public PessoaBuilder nome(String nome) {
             this.nome = nome;
+            return this;
+        }
+
+        public PessoaBuilder cpfCnpj(String cpfCnpj) {
+            this.cpfCnpj = cpfCnpj;
             return this;
         }
 
