@@ -1,4 +1,5 @@
-package database;
+package database.file;
+import database.exception.EntityFileStorageException;
 import domain.entities.Entidade;
 import domain.factory.EntidadeFactory;
 
@@ -18,18 +19,19 @@ public class EntityFileStorage<T extends Entidade> {
 
 
 
-     public void salvarEmArquivo(List<T> lista) {
+     public void salvarEmArquivo(List<T> lista) throws EntityFileStorageException {
           try (BufferedWriter writer = new BufferedWriter(new FileWriter(nomeArquivo))) {
                for (T entidade : lista) {
                     writer.write(entidade.toCsvString());
                     writer.newLine();
                }
           } catch (IOException e) {
-               e.printStackTrace();
+               throw new EntityFileStorageException("Erro ao escrever arquivos "+ this.nomeArquivo,e);
+
           }
      }
 
-     public List<T> carregarDoArquivo() {
+     public List<T> carregarDoArquivo() throws EntityFileStorageException {
           List<T> lista = new ArrayList<>();
           try (BufferedReader reader = new BufferedReader(new FileReader(nomeArquivo))) {
                String linha;
@@ -37,7 +39,7 @@ public class EntityFileStorage<T extends Entidade> {
                     lista.add((T) factory.criarEntidade().fromCsvString(linha));
                }
           } catch (IOException e) {
-               e.printStackTrace();
+               throw new EntityFileStorageException("Erro ao ler aquivio, ou arquivo não encontrado "+ this.nomeArquivo,e);
           }
           return lista;
      }

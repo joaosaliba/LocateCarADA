@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56630c4f-1b7a-4fba-9234-ff4ad6656792" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/domain/factory/AluguelFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/factory/CarroFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/factory/EntidadeFactory.java" afterDir="false" />
+    <list default="true" id="56630c4f-1b7a-4fba-9234-ff4ad6656792" name="Changes" comment="feat: using strategy to create e use file databse">
+      <change afterPath="$PROJECT_DIR$/src/database/exception/EntityFileStorageException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database/repository/Repository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database/repository/RepositoryImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/AluguelFileStorge.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/CarroFileStorge.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/EntityFileStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/EntityFileStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/PessoaFileStorge.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/entities/Entidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/entities/Entidade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/factory/PessoaFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/factory/PessoaFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/EntityFileStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/file/EntityFileStorage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +44,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Run",
+    "Application.Main.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -104,7 +99,7 @@
       <updated>1709863324408</updated>
       <workItem from="1709863325740" duration="42000" />
       <workItem from="1709863373613" duration="2880000" />
-      <workItem from="1710085528398" duration="7340000" />
+      <workItem from="1710085528398" duration="10409000" />
     </task>
     <task id="LOCAL-00001" summary="feat: create database">
       <option name="closed" value="true" />
@@ -114,7 +109,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710092095862</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: using strategy to create e use file databse">
+      <option name="closed" value="true" />
+      <created>1710093256898</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710093256898</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,16 +125,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: create database" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: create database" />
+    <MESSAGE value="feat: using strategy to create e use file databse" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: using strategy to create e use file databse" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang">
             <option name="NOTIFY_CAUGHT" value="false" />
