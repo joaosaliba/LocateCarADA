@@ -38,8 +38,8 @@ public record Initializer(EntityFileStorage<Carro> arquivoCarros, EntityFileStor
 
 
         return new Initializer(arquivoCarros, arquivoClientes, arquivoAlugueis,
-                                 carros, pessoas, alugueis,
-                        carroService, pessoaService, aluguelService);
+                carros, pessoas, alugueis,
+                carroService, pessoaService, aluguelService);
     }
 
     public static void close(Initializer result) throws EntityFileStorageException {

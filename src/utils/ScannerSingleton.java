@@ -3,10 +3,9 @@ package utils;
 import java.util.Scanner;
 
 public class ScannerSingleton {
-    private Scanner scanner ;
     private static final ScannerSingleton SINGLETON = new ScannerSingleton();
 
-    static{
+    static {
         Runtime.getRuntime().addShutdownHook(new Thread() {
             @Override
             public void run() {
@@ -14,8 +13,11 @@ public class ScannerSingleton {
             }
         });
     }
+
+    private Scanner scanner;
+
     private ScannerSingleton() {
-        this.scanner= new Scanner(System.in);
+        this.scanner = new Scanner(System.in);
     }
 
     public static ScannerSingleton instance() {

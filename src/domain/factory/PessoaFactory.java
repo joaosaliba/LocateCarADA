@@ -1,8 +1,8 @@
 package domain.factory;
 
+import domain.entities.pessoa.Pessoa;
 import domain.entities.pessoa.PessoaFisica;
 import domain.entities.pessoa.PessoaJuridica;
-import domain.entities.pessoa.Pessoa;
 import domain.enums.TipoPessoaEnum;
 
 public class PessoaFactory implements EntidadeFactory<Pessoa> {

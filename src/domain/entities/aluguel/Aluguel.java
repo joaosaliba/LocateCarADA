@@ -31,7 +31,9 @@ public class Aluguel implements Entidade {
         this.dthDevolucao = dthDevolucao;
         this.id = getIdAndIncrement();
 
-    }   public Aluguel(Pessoa pessoa, Carro carro, LocalDateTime dthRetirada) {
+    }
+
+    public Aluguel(Pessoa pessoa, Carro carro, LocalDateTime dthRetirada) {
         this.pessoa = pessoa;
         this.carro = carro;
         this.dthRetirada = dthRetirada;
@@ -123,11 +125,11 @@ public class Aluguel implements Entidade {
 
     @Override
     public String toCsvString() {
-        return   pessoa.toCsvString() + ";" +
+        return pessoa.toCsvString() + ";" +
                 carro.toCsvString() + ";" +
-                 id + "," +
+                id + "," +
                 dthRetirada.toString() + "," +
-               ( Objects.nonNull(dthDevolucao) ? dthDevolucao.toString() :null) + "," +
+                (Objects.nonNull(dthDevolucao) ? dthDevolucao.toString() : null) + "," +
                 desconto;
     }
 
@@ -138,9 +140,9 @@ public class Aluguel implements Entidade {
         Carro carro = new Carro().fromCsvString(parts[1]);
         parts = parts[2].split(",");
         String id = parts[0];
-        LocalDateTime dthRetirada = !"null".equals(parts[1])?LocalDateTime.parse(parts[1]):null;
-        LocalDateTime dthDevolucao = !"null".equals(parts[2])?LocalDateTime.parse(parts[2]):null;
-        Double desconto = !"null".equals(parts[3])?Double.parseDouble(parts[3]):null;
+        LocalDateTime dthRetirada = !"null".equals(parts[1]) ? LocalDateTime.parse(parts[1]) : null;
+        LocalDateTime dthDevolucao = !"null".equals(parts[2]) ? LocalDateTime.parse(parts[2]) : null;
+        Double desconto = !"null".equals(parts[3]) ? Double.parseDouble(parts[3]) : null;
 
         return new Aluguel(id, pessoa, carro, dthRetirada, dthDevolucao, desconto);
     }

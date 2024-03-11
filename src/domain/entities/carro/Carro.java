@@ -21,7 +21,7 @@ public class Carro implements Entidade {
         this.valorDiaria = this.getValorDiaria();
     }
 
-    public Carro(String placa,String modelo, String tipoCarroEnumStr) {
+    public Carro(String placa, String modelo, String tipoCarroEnumStr) {
         this.placa = placa;
         this.modelo = modelo;
         this.tipoCarroEnum = TipoCarroEnum.valueOf(tipoCarroEnumStr);
@@ -36,13 +36,14 @@ public class Carro implements Entidade {
         this.modelo = modelo;
     }
 
+    public String getPlaca() {
+        return this.getId();
+    }
+
     public void setPlaca(String placa) {
         this.placa = placa;
     }
 
-    public String getPlaca() {
-        return this.getId();
-    }
     @Override
     public String getId() {
         return this.placa;
@@ -56,13 +57,14 @@ public class Carro implements Entidade {
     public void setTipoCarroEnum(TipoCarroEnum tipoCarroEnum) {
         this.tipoCarroEnum = tipoCarroEnum;
     }
+
     public BigDecimal getValorDiaria() {
         switch (this.getTipoCarroEnum()) {
             case TipoCarroEnum.PEQUENO:
                 return BigDecimal.valueOf(100.0);
-            case  TipoCarroEnum.MEDIO:
+            case TipoCarroEnum.MEDIO:
                 return BigDecimal.valueOf(150.0);
-            case  TipoCarroEnum.SUV:
+            case TipoCarroEnum.SUV:
                 return BigDecimal.valueOf(200.0);
             default:
                 return BigDecimal.ZERO;
@@ -75,11 +77,10 @@ public class Carro implements Entidade {
     }
 
     @Override
-    public  Carro fromCsvString(String csv) {
+    public Carro fromCsvString(String csv) {
         String[] parts = csv.split(",");
-        return new Carro(parts[0], parts[1],parts[2]);
+        return new Carro(parts[0], parts[1], parts[2]);
     }
-
 
 
 }

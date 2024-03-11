@@ -5,7 +5,7 @@ import domain.entities.Entidade;
 import domain.enums.TipoPessoaEnum;
 import domain.factory.PessoaFactory;
 
-public  class Pessoa implements Entidade {
+public class Pessoa implements Entidade {
     private String cpfCnpj;
 
     private String nome;
