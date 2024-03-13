@@ -4,8 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56630c4f-1b7a-4fba-9234-ff4ad6656792" name="Changes" comment="feat: adding services">
+    <list default="true" id="56630c4f-1b7a-4fba-9234-ff4ad6656792" name="Changes" comment="feat: menuview for carro">
+      <change afterPath="$PROJECT_DIR$/src/domain/CSVInteface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/AluguelView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/CarroView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/MenuPrincipalView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/PessoaView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Initializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InitializerMyProject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/repository/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/repository/RepositoryImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/repository/RepositoryImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/entities/Entidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/entities/Entidade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/CarroService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/CarroService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,25 +48,25 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="domain" />
@@ -94,7 +105,9 @@
       <updated>1709863324408</updated>
       <workItem from="1709863325740" duration="42000" />
       <workItem from="1709863373613" duration="2880000" />
-      <workItem from="1710085528398" duration="14986000" />
+      <workItem from="1710085528398" duration="21361000" />
+      <workItem from="1710284394134" duration="1000" />
+      <workItem from="1710285069749" duration="3388000" />
     </task>
     <task id="LOCAL-00001" summary="feat: create database">
       <option name="closed" value="true" />
@@ -136,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710100236829</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat: optimize imports and organize code">
+      <option name="closed" value="true" />
+      <created>1710195054854</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1710195054854</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,7 +169,9 @@
     <MESSAGE value="feat: creating generic Repository" />
     <MESSAGE value="fix: fixing read file if not exist e populate Object Aluguel" />
     <MESSAGE value="feat: adding services" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: adding services" />
+    <MESSAGE value="feat: optimize imports and organize code" />
+    <MESSAGE value="feat: menuview for carro" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: menuview for carro" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -161,13 +184,18 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/domain/entities/aluguel/Aluguel.java</url>
-          <line>144</line>
+          <line>146</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>31</line>
+          <line>17</line>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/database/repository/RepositoryImp.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

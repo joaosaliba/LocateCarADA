@@ -1,9 +1,9 @@
 package domain.entities;
 
-public interface Entidade {
+import domain.CSVInteface;
+
+public interface Entidade extends CSVInteface {
     String getId();
 
-    String toCsvString();
 
-    Entidade fromCsvString(String csv);
 }

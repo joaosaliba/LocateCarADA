@@ -7,6 +7,7 @@ import java.util.Set;
 
 public interface Repository<T extends Entidade, K> {
     void insert(T entity) throws SQLException;
+    void update(T entity) throws SQLException;
 
     void removeById(K entityID) throws SQLException;
 

@@ -11,14 +11,19 @@ import domain.factory.PessoaFactory;
 import services.AluguelService;
 import services.CarroService;
 import services.PessoaService;
+import view.AluguelView;
+import view.CarroView;
+import view.MenuPrincipalView;
+import view.PessoaView;
 
 import java.util.Set;
 
-public record Initializer(EntityFileStorage<Carro> arquivoCarros, EntityFileStorage<Pessoa> arquivoClientes,
-                          EntityFileStorage<Aluguel> arquivoAlugueis, Set<Carro> carros, Set<Pessoa> pessoas,
-                          Set<Aluguel> alugueis, CarroService carroService, PessoaService pessoaService,
-                          AluguelService aluguelService) {
-    public static Initializer getInitializer() throws EntityFileStorageException {
+public record InitializerMyProject(EntityFileStorage<Carro> arquivoCarros, EntityFileStorage<Pessoa> arquivoClientes,
+                                   EntityFileStorage<Aluguel> arquivoAlugueis,
+                                   Set<Carro> carros, Set<Pessoa> pessoas, Set<Aluguel> alugueis,
+                                   MenuPrincipalView menuPrincipalView,
+                                   CarroView carroView, PessoaView pessoaView, AluguelView aluguelView) {
+    public static InitializerMyProject getInitializer() throws EntityFileStorageException {
         EntityFileStorage<Carro> arquivoCarros = new EntityFileStorage<>("carro.csv", new CarroFactory());
         EntityFileStorage<Pessoa> arquivoClientes = new EntityFileStorage<>("pessoa.csv", new PessoaFactory());
         EntityFileStorage<Aluguel> arquivoAlugueis = new EntityFileStorage<>("alugueis.csv", new AluguelFactory());
@@ -37,12 +42,22 @@ public record Initializer(EntityFileStorage<Carro> arquivoCarros, EntityFileStor
         AluguelService aluguelService = new AluguelService(repositoryAlugueisImp);
 
 
-        return new Initializer(arquivoCarros, arquivoClientes, arquivoAlugueis,
+        CarroView carroView = new CarroView(carroService);
+        PessoaView pessoaView = new PessoaView(pessoaService);
+        AluguelView aluguelView = new AluguelView(aluguelService);
+
+        MenuPrincipalView menuPrincipalView = new MenuPrincipalView(carroView,
+                pessoaView,
+                aluguelView);
+
+        return new InitializerMyProject(arquivoCarros, arquivoClientes, arquivoAlugueis,
                 carros, pessoas, alugueis,
-                carroService, pessoaService, aluguelService);
+                menuPrincipalView,
+                carroView, pessoaView, aluguelView
+        );
     }
 
-    public static void close(Initializer result) throws EntityFileStorageException {
+    public static void close(InitializerMyProject result) throws EntityFileStorageException {
         result.arquivoCarros().salvarEmArquivo(result.carros());
         result.arquivoClientes().salvarEmArquivo(result.pessoas());
         result.arquivoAlugueis().salvarEmArquivo(result.alugueis());

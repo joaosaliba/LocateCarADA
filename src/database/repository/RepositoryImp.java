@@ -3,6 +3,7 @@ package database.repository;
 import domain.entities.Entidade;
 
 import java.sql.SQLException;
+import java.util.Optional;
 import java.util.Set;
 
 public class RepositoryImp<T extends Entidade, K> implements Repository<T, K> {
@@ -16,6 +17,18 @@ public class RepositoryImp<T extends Entidade, K> implements Repository<T, K> {
     @Override
     public void insert(T entity) throws SQLException {
         this.list.add(entity);
+    }
+
+    @Override
+    public void update(T entity) throws SQLException {
+       Optional<T> entityFound = this.list.stream().filter(e->e.getId().equals(entity.getId())).findFirst();
+       if(entityFound.isPresent()){
+
+        this.list.remove(entityFound.get());
+        this.list.add(entity);
+       }else {
+           throw new SQLException(" Entidade não encontrada");
+       }
     }
 
     @Override

@@ -14,10 +14,25 @@ public class CarroService {
     }
 
     public void insert(Carro c) throws SQLException {
-        Carro banco = repositoryImp.getByID(c.getId());
-        if (Objects.nonNull(banco)) {
+        Carro carro = repositoryImp.getByID(c.getId());
+        if (Objects.nonNull(carro)) {
             throw new RuntimeException("Carro já cadastrado");
         }
         repositoryImp.insert(c);
     }
+
+    public Carro findById(String placa) throws SQLException {
+        Carro carro = repositoryImp.getByID(placa);
+        if (Objects.isNull(carro)) {
+            throw new RuntimeException("Carro não encontrado");
+        }
+        return carro;
+    }
+
+    public void update(Carro carro) throws SQLException {
+
+        this.repositoryImp.update(carro);
+    }
+
+
 }
