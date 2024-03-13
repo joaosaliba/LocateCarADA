@@ -44,7 +44,7 @@ public class Pessoa implements Entidade {
     }
 
 
-    protected TipoPessoaEnum getTipoPessoaEnum() {
+    public TipoPessoaEnum getTipoPessoaEnum() {
         return tipoPessoaEnum;
     }
 

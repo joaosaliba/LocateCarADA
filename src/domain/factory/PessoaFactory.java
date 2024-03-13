@@ -9,8 +9,8 @@ public class PessoaFactory implements EntidadeFactory<Pessoa> {
 
     public static Pessoa getInstance(TipoPessoaEnum tipoPessoaEnum) {
         return switch (tipoPessoaEnum) {
-            case PESSOA_FISICA -> new PessoaFisica();
-            case PESSOA_JURIDICA -> new PessoaJuridica();
+            case FISICA -> new PessoaFisica();
+            case JURIDICA -> new PessoaJuridica();
             default -> throw new IllegalArgumentException("Tipo Pessoa não encontrada");
         };
 

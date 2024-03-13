@@ -20,7 +20,7 @@ public class MenuPrincipalView {
 
     public void execute() {
         Scanner scanner = ScannerSingleton.instance().getScanner();
-        int opcao;
+        int opcao=-1;
 
         do {
             this.showOptions();
@@ -37,10 +37,10 @@ public class MenuPrincipalView {
                     this.carroView.findByPlaca();
                     break;
                 case 4:
-                    // Implemente a lógica para cadastrar cliente
+                    this.pessoaView.cadastrarPessoa();
                     break;
                 case 5:
-                    // Implemente a lógica para alterar cliente
+                    this.pessoaView.alterarPessoa();
                     break;
                 case 6:
                     // Implemente a lógica para alugar veículo
