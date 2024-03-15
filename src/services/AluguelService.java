@@ -67,9 +67,9 @@ public class AluguelService {
     }
 
     public Double aplicarDesconto(Pessoa pessoa, Long qntDias) {
-        if (pessoa instanceof PessoaFisica && qntDias > 5) {
+        if (pessoa instanceof PessoaFisica && qntDias > (5*24)) {
             return 5.0 / 100;
-        } else if (pessoa instanceof PessoaJuridica && qntDias > 3) {
+        } else if (pessoa instanceof PessoaJuridica && qntDias > (3*24)) {
             return 10.0 / 100;
         }
         return 0.0;

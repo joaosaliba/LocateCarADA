@@ -16,7 +16,12 @@ Este é um sistema de locadora de veículos que permite o cadastro e gerenciamen
 
 6. **Aluguel de Veículos:** Permite realizar o aluguel de um veículo para clientes, registrando local, data e horário do aluguel.
 
-7. **Devolução de Veículos:** Permite registrar a devolução de um veículo alugado, considerando local, data e horário da devolução, além de aplicar descontos conforme as regras estabelecidas.
+7. **Devolução de Veículos:** Permite registrar a devolução de um veículo alugado, data e horário da devolução, além de aplicar descontos conforme as regras estabelecidas.
+
+8. **Lista de Veículos**
+
+9. **Lista de Pessoas**
+
 
 ## Regras de Negócio
 

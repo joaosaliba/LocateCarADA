@@ -67,7 +67,7 @@ public class Aluguel implements Entidade {
     }
 
     public Long getQntDias() {
-        return Duration.between( this.dthRetirada,this.dthDevolucao).toDays();
+        return Duration.between( this.dthRetirada,this.dthDevolucao).toHours();
     }
 
 
