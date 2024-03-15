@@ -58,7 +58,7 @@ public record InitializerMyProject(EntityFileStorage<Carro> arquivoCarros, Entit
         );
     }
 
-    public static void close(InitializerMyProject result) throws EntityFileStorageException {
+    public static void writeFiles(InitializerMyProject result) throws EntityFileStorageException {
         result.arquivoCarros().salvarEmArquivo(result.carros());
         result.arquivoClientes().salvarEmArquivo(result.pessoas());
         result.arquivoAlugueis().salvarEmArquivo(result.alugueis());

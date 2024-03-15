@@ -4,7 +4,9 @@ import database.repository.Repository;
 import domain.entities.carro.Carro;
 
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 public class CarroService {
     private Repository<Carro, String> repositoryImp;
@@ -35,4 +37,7 @@ public class CarroService {
     }
 
 
+    public Set<Carro> getAll() throws SQLException {
+        return  this.repositoryImp.getAll();
+    }
 }

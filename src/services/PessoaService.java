@@ -8,6 +8,7 @@ import domain.factory.PessoaFactory;
 
 import java.sql.SQLException;
 import java.util.Objects;
+import java.util.Set;
 
 public class PessoaService {
     private Repository<Pessoa, String> repositoryImp;
@@ -41,5 +42,9 @@ public class PessoaService {
             throw new RuntimeException("Pessoa não encontrado");
         }
         return carro;
+    }
+
+    public Set<Pessoa> getAll() throws SQLException {
+       return this.repositoryImp.getAll();
     }
 }

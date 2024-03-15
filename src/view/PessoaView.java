@@ -1,11 +1,13 @@
 package view;
 
+import domain.entities.carro.Carro;
 import domain.entities.pessoa.Pessoa;
 import services.PessoaService;
 import utils.ScannerSingleton;
 
 import java.util.Objects;
 import java.util.Scanner;
+import java.util.Set;
 
 public class PessoaView {
     private PessoaService pessoaService;
@@ -64,5 +66,22 @@ public class PessoaView {
     private void showInformations(Pessoa pessoa) {
         System.out.println("| CPF/CNPJ | NOME | TIPO |");
         System.out.printf("| %s | %s | %s |", pessoa.getId(), pessoa.getNome(), pessoa.getTipoPessoaEnum().name());
+    }
+    private void showInformations(Set<Pessoa> pessoas) {
+        System.out.println("| CPF/CNPJ | NOME | TIPO |");
+        for(Pessoa pessoa : pessoas){
+        System.out.printf("| %s | %s | %s |\n", pessoa.getId(), pessoa.getNome(), pessoa.getTipoPessoaEnum().name());
+
+        }
+    }
+
+    public void listarPessoas() {
+        try {
+
+            Set<Pessoa> pessoas =this.pessoaService.getAll();
+            showInformations(pessoas);
+        }catch (Exception e){
+            System.out.println("erro");
+        }
     }
 }

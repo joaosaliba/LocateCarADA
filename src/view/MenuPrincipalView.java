@@ -1,8 +1,5 @@
 package view;
 
-import services.AluguelService;
-import services.CarroService;
-import services.PessoaService;
 import utils.ScannerSingleton;
 
 import java.util.Scanner;
@@ -20,7 +17,7 @@ public class MenuPrincipalView {
 
     public void execute() {
         Scanner scanner = ScannerSingleton.instance().getScanner();
-        int opcao=-1;
+        int opcao = -1;
 
         do {
             this.showOptions();
@@ -43,17 +40,23 @@ public class MenuPrincipalView {
                     this.pessoaView.alterarPessoa();
                     break;
                 case 6:
-                   this.aluguelView.aluguarVeiculo();
+                    this.aluguelView.aluguarVeiculo();
                     break;
                 case 7:
                     this.aluguelView.devolverVeiculo();
+                    break;
+                case 8:
+                    this.carroView.listarCarros();
+                    break;
 
+                case 9:
+                    this.pessoaView.listarPessoas();
                     break;
                 case 0: {
                     System.out.println("Saindo...");
                     scanner.close();
                 }
-                    break;
+                break;
                 default:
                     System.out.println("Opção inválida. Tente novamente.");
             }
@@ -70,6 +73,8 @@ public class MenuPrincipalView {
         System.out.println("5. Alterar Cliente");
         System.out.println("6. Alugar Veículo");
         System.out.println("7. Devolver Veículo");
+        System.out.println("8. Listar Veículos");
+        System.out.println("9. Listar Pessoas");
         System.out.println("0. Sair");
         System.out.print("Escolha a opção desejada: ");
     }

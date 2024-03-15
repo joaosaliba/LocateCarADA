@@ -1,5 +1,3 @@
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) throws Exception {
 
@@ -15,7 +13,7 @@ public class Main {
 
 //        Aluguel a = new Aluguel(p,c, LocalDateTime.now());
 
-        InitializerMyProject.close(initializer);
+        InitializerMyProject.writeFiles(initializer);
 
     }
 

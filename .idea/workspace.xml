@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56630c4f-1b7a-4fba-9234-ff4ad6656792" name="Changes" comment="feat: menuview for pessoa">
+    <list default="true" id="56630c4f-1b7a-4fba-9234-ff4ad6656792" name="Changes" comment="feat: menuview for aluguel">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InitializerMyProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InitializerMyProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/entities/aluguel/Aluguel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/entities/aluguel/Aluguel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/entities/carro/Carro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/entities/carro/Carro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/AluguelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/AluguelService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/AluguelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AluguelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/CarroService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/CarroService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/PessoaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/PessoaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/CarroView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CarroView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/MenuPrincipalView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MenuPrincipalView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PessoaView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PessoaView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +105,8 @@
       <workItem from="1710284394134" duration="1000" />
       <workItem from="1710285069749" duration="3388000" />
       <workItem from="1710349244268" duration="2936000" />
-      <workItem from="1710463537870" duration="3470000" />
+      <workItem from="1710463537870" duration="3598000" />
+      <workItem from="1710467203464" duration="583000" />
     </task>
     <task id="LOCAL-00001" summary="feat: create database">
       <option name="closed" value="true" />
@@ -171,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710359221197</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat: menuview for aluguel">
+      <option name="closed" value="true" />
+      <created>1710467045124</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1710467045125</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,7 +195,8 @@
     <MESSAGE value="feat: optimize imports and organize code" />
     <MESSAGE value="feat: menuview for carro" />
     <MESSAGE value="feat: menuview for pessoa" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: menuview for pessoa" />
+    <MESSAGE value="feat: menuview for aluguel" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: menuview for aluguel" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -199,7 +209,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/services/PessoaService.java</url>
-          <line>19</line>
+          <line>20</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

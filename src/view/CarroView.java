@@ -5,8 +5,10 @@ import domain.enums.TipoCarroEnum;
 import services.CarroService;
 import utils.ScannerSingleton;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
+import java.util.Set;
 
 public class CarroView {
     private CarroService carroService;
@@ -80,5 +82,22 @@ public class CarroView {
     private void showCarroInformations(Carro carro) {
         System.out.println("| PLACA | MODELO | TIPO | VALOR DIARIA |");
         System.out.printf("| %s | %s | %s | R$%s |",carro.getPlaca(),carro.getModelo(),carro.getTipoCarroEnum().name(),carro.getValorDiaria());
+    }
+  private void showCarroInformations( Set<Carro> carros) {
+        System.out.println("| PLACA | MODELO | TIPO | VALOR DIARIA |");
+        for(Carro carro : carros){
+
+        System.out.printf("| %s | %s | %s | R$%s |\n",carro.getPlaca(),carro.getModelo(),carro.getTipoCarroEnum().name(),carro.getValorDiaria());
+        }
+    }
+
+    public void listarCarros() {
+        try {
+
+        Set<Carro> carros =this.carroService.getAll();
+            showCarroInformations(carros);
+        }catch (Exception e){
+            System.out.println("erro");
+        }
     }
 }
