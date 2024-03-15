@@ -39,7 +39,8 @@ public record InitializerMyProject(EntityFileStorage<Carro> arquivoCarros, Entit
 
         CarroService carroService = new CarroService(repositoryCarrosImp);
         PessoaService pessoaService = new PessoaService(repositoryPessoaImp);
-        AluguelService aluguelService = new AluguelService(repositoryAlugueisImp);
+        AluguelService aluguelService = new AluguelService(repositoryAlugueisImp,carroService,
+                pessoaService);
 
 
         CarroView carroView = new CarroView(carroService);

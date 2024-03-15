@@ -28,7 +28,7 @@ public class CarroView {
         System.out.println("Digite o Modelo do veiculo ");
         String modelo = scanner.next();
 
-        Carro carro = new Carro(placa,modelo,tipo);
+        Carro carro = new Carro(placa,modelo,TipoCarroEnum.valueOf(tipo));
 
         this.carroService.insert(carro);
 
@@ -53,7 +53,7 @@ public class CarroView {
             System.out.println("Digite o Modelo do veiculo ");
             String modelo = scanner.next();
 
-            Carro carro = new Carro(placa,modelo,tipo);
+            Carro carro = new Carro(placa,modelo,TipoCarroEnum.valueOf(tipo));
             this.carroService.update(carro);
         }catch (Exception e){
             System.out.println("Ocorreu um erro, generico pois nao quis fazer classes para cada tipo de erro");

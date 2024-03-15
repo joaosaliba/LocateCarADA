@@ -10,6 +10,7 @@ public class Carro implements Entidade {
     private String modelo;
     private BigDecimal valorDiaria;
     private TipoCarroEnum tipoCarroEnum;
+    private Boolean isAlugado;
 
     public Carro() {
     }
@@ -18,14 +19,17 @@ public class Carro implements Entidade {
         this.placa = placa;
         this.modelo = modelo;
         this.tipoCarroEnum = tipoCarroEnum;
+        this.isAlugado = false;
         this.valorDiaria = this.getValorDiaria();
     }
 
-    public Carro(String placa, String modelo, String tipoCarroEnumStr) {
+    public Carro(String placa, String modelo, String tipoCarroEnumStr,String isAlugado) {
         this.placa = placa;
         this.modelo = modelo;
         this.tipoCarroEnum = TipoCarroEnum.valueOf(tipoCarroEnumStr);
         this.valorDiaria = this.getValorDiaria();
+        this.isAlugado = Boolean.valueOf(isAlugado);
+
     }
 
     public String getModelo() {
@@ -58,6 +62,16 @@ public class Carro implements Entidade {
         this.tipoCarroEnum = tipoCarroEnum;
     }
 
+
+
+    public Boolean getAlugado() {
+        return isAlugado;
+    }
+
+    public void setAlugado(Boolean alugado) {
+        isAlugado = alugado;
+    }
+
     public BigDecimal getValorDiaria() {
         switch (this.getTipoCarroEnum()) {
             case TipoCarroEnum.PEQUENO:
@@ -73,13 +87,13 @@ public class Carro implements Entidade {
 
     @Override
     public String toCsvString() {
-        return placa + "," + modelo + "," + tipoCarroEnum.name();
+        return placa + "," + modelo + "," + tipoCarroEnum.name()+ "," + isAlugado;
     }
 
     @Override
     public Carro fromCsvString(String csv) {
         String[] parts = csv.split(",");
-        return new Carro(parts[0], parts[1], parts[2]);
+        return new Carro(parts[0], parts[1], parts[2], parts[3]);
     }
 
 

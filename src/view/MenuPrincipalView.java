@@ -43,10 +43,11 @@ public class MenuPrincipalView {
                     this.pessoaView.alterarPessoa();
                     break;
                 case 6:
-                    // Implemente a lógica para alugar veículo
+                   this.aluguelView.aluguarVeiculo();
                     break;
                 case 7:
-                    // Implemente a lógica para devolver veículo
+                    this.aluguelView.devolverVeiculo();
+
                     break;
                 case 0: {
                     System.out.println("Saindo...");
