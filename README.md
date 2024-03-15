@@ -27,7 +27,7 @@ Este é um sistema de locadora de veículos que permite o cadastro e gerenciamen
 
 1. Os veículos não podem ser repetidos, utilizando a placa como identificador de unicidade.
 2. Tipos de veículos considerados: PEQUENO, MÉDIO e SUV.
-3. Os aluguéis e devoluções devem registrar local, data e horário.
+3. Os aluguéis e devoluções devem registrar ~~local~~, data e horário.
 4. Aluguéis em horas quebradas são considerados diárias completas. Exemplo: uma devolução às 15h30 será cobrada uma diária até às 15h30 do dia seguinte.
 5. Veículos alugados não estarão disponíveis para locação.
 6. Clientes não podem ser duplicados, utilizando CPF (Pessoa Física) e CNPJ (Pessoa Jurídica) como identificadores de unicidade.
